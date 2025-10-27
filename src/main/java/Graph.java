@@ -70,7 +70,7 @@ public class Graph {
         return sb.toString();
     }
 
-    public void outputGraph(String filepath) throws IOException {
+    public void outputDOTGraph(String filepath) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filepath))) {
             writer.write("digraph G {\n");
             for (String node : nodes) {
@@ -81,6 +81,24 @@ public class Graph {
             }
             writer.write("}\n");
         }
+    }
+
+    public void outputGraphics(String path, String format) throws IOException, InterruptedException {
+        String tempDot = "src/main/resources/tempGraph.dot";
+        outputDOTGraph(tempDot);
+        String cmd = String.format("dot -T%s %s -o %s", format, tempDot, path);
+        Process process = Runtime.getRuntime().exec(cmd);
+        int exitCode = process.waitFor();
+        if (exitCode != 0) {
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getErrorStream()))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    System.err.println(line);
+                }
+            }
+            throw new IOException("Graphviz command failed. Make sure Graphviz is installed and 'dot' is in your PATH.");
+        }
+        new File(tempDot).delete();
     }
 }
 

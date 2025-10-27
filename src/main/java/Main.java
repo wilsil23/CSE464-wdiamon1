@@ -17,7 +17,8 @@ public class Main {
             System.out.println("After adding nodes and edges:");
             System.out.println(g.toString());
 
-            g.outputGraph("src/main/resources/output.dot");
+            g.outputDOTGraph("src/main/resources/output.dot");
+            g.outputGraphics("src/main/resources/output.png", "png");
         } catch (Exception e) {
             e.printStackTrace();
         }
