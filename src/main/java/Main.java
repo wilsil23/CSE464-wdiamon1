@@ -1,7 +1,10 @@
+import java.io.InputStream;
+
 public class Main {
     public static void main(String[] args) {
         try {
-            Graph g = GraphParser.parseGraph("src/main/resources/input.dot");
+            InputStream is = Main.class.getResourceAsStream("/input.dot");
+            Graph g = GraphParser.parseGraph(is);
             System.out.println(g.toString());
             g.outputGraph("src/main/resources/output.dot");
         } catch (Exception e) {
