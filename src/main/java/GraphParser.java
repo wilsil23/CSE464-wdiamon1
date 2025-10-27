@@ -15,7 +15,7 @@ public class GraphParser {
                 String dst = m.group(2);
                 graph.addNode(src);
                 graph.addNode(dst);
-                graph.addEdge(src, dst);
+                graph.addEdgeUnique(src, dst);
             }
         }
         reader.close();
