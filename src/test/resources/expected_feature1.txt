@@ -1,0 +1,5 @@
+Nodes: 3
+Labels: [A, B, C]
+Edges: 2
+A -> B
+B -> C
