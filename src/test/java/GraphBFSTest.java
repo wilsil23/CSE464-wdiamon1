@@ -8,7 +8,7 @@ public class GraphBFSTest {
         g.addEdgeUnique("A", "B");
         g.addEdgeUnique("B", "C");
         g.addEdgeUnique("A", "D");
-        Path p = g.GraphSearch("A", "C");
+        Path p = g.bfsSearch("A", "C");
         assertNotNull(p);
         assertEquals("A -> B -> C", p.toString());
     }
@@ -18,6 +18,6 @@ public class GraphBFSTest {
         Graph g = new Graph();
         g.addEdgeUnique("A", "B");
         g.addNode("Z");
-        assertNull(g.GraphSearch("A", "Z"));
+        assertNull(g.bfsSearch("A", "Z"));
     }
 }

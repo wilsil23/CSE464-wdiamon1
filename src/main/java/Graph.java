@@ -5,6 +5,11 @@ public class Graph {
     private Set<String> nodes = new HashSet<>();
     private List<String[]> edges = new ArrayList<>();
 
+    public enum Algorithm {
+        BFS,
+        DFS
+    }
+
     public void addNode(String label) {
         nodes.add(label);
     }
@@ -111,8 +116,15 @@ public class Graph {
         }
         return false;
     }
+    public Path GraphSearch(String src, String dst, Algorithm initAlgorithm) {
+        if (initAlgorithm == Algorithm.BFS) {
+            return bfsSearch(src, dst);
+        } else {
+            return dfsSearch(src, dst);
+        }
+    }
 
-    public Path GraphSearch(String src, String dst) {
+    public Path bfsSearch(String src, String dst) {
         if (!nodes.contains(src) || !nodes.contains(dst)) {
             return null;
         }
@@ -146,7 +158,7 @@ public class Graph {
         return null;
     }
 
-    public Path GraphSearchDFS(String src, String dst) {
+    public Path dfsSearch(String src, String dst) {
         if (!nodes.contains(src) || !nodes.contains(dst)) {
             return null;
         }

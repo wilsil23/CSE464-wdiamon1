@@ -2,3 +2,4 @@ GraphParser.class
 Main.class
 Graph.class
 Path.class
+Graph$Algorithm.class

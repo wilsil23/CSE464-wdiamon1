@@ -8,7 +8,7 @@ public class GraphDFSTest {
         g.addEdgeUnique("A", "B");
         g.addEdgeUnique("B", "C");
         g.addEdgeUnique("A", "D");
-        Path p = g.GraphSearchDFS("A", "C");
+        Path p = g.dfsSearch("A", "C");
         assertNotNull(p);
     }
     @Test
@@ -16,6 +16,6 @@ public class GraphDFSTest {
         Graph g = new Graph();
         g.addEdgeUnique("A", "B");
         g.addNode("Z");
-        assertNull(g.GraphSearchDFS("A", "Z"));
+        assertNull(g.dfsSearch("A", "Z"));
     }
 }
