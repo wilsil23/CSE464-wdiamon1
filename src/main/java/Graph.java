@@ -87,7 +87,6 @@ public class Graph {
         if (!nodes.contains(src) || !nodes.contains(dst)) {
             throw new IllegalArgumentException("One or both nodes do not exist: " + src + ", " + dst);
         }
-
         boolean removed = false;
         Iterator<String[]> it = edges.iterator();
         while (it.hasNext()) {
@@ -98,7 +97,6 @@ public class Graph {
                 break;
             }
         }
-
         if (!removed) {
             throw new IllegalArgumentException("Edge does not exist: " + src + " -> " + dst);
         }
@@ -112,6 +110,40 @@ public class Graph {
             if (e[0].equals(src) && e[1].equals(dst)) return true;
         }
         return false;
+    }
+
+    public Path GraphSearch(String src, String dst) {
+        if (!nodes.contains(src) || !nodes.contains(dst)) {
+            return null;
+        }
+        Queue<String> queue = new LinkedList<>();
+        Map<String, String> parent = new HashMap<>();
+        queue.add(src);
+        parent.put(src, null);
+
+        while (!queue.isEmpty()) {
+            String current = queue.poll();
+            if (current.equals(dst)) {
+                List<String> pathList = new ArrayList<>();
+                String node = dst;
+                while (node != null) {
+                    pathList.add(node);
+                    node = parent.get(node);
+                }
+                Collections.reverse(pathList);
+                return new Path(pathList);
+            }
+            for (String[] e : edges) {
+                if (e[0].equals(current)) {
+                    String neighbor = e[1];
+                    if (!parent.containsKey(neighbor)) {
+                        parent.put(neighbor, current);
+                        queue.add(neighbor);
+                    }
+                }
+            }
+        }
+        return null;
     }
 
     @Override
