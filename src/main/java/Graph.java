@@ -146,6 +146,41 @@ public class Graph {
         return null;
     }
 
+    public Path GraphSearchDFS(String src, String dst) {
+        if (!nodes.contains(src) || !nodes.contains(dst)) {
+            return null;
+        }
+        Set<String> visited = new HashSet<>();
+        List<String> path = new ArrayList<>();
+        boolean found = dfsHelper(src, dst, visited, path);
+        if (found) {
+            return new Path(path);
+        }
+        return null;
+    }
+
+    private boolean dfsHelper(String current, String dst,
+                              Set<String> visited,
+                              List<String> path) {
+        visited.add(current);
+        path.add(current);
+        if (current.equals(dst)) {
+            return true;
+        }
+        for (String[] e : edges) {
+            if (e[0].equals(current)) {
+                String neighbor = e[1];
+                if (!visited.contains(neighbor)) {
+                    if (dfsHelper(neighbor, dst, visited, path)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        path.remove(path.size() - 1);
+        return false;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
