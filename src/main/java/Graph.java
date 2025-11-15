@@ -146,7 +146,7 @@ public class Graph {
         return null;
     }
 
-    public Path GraphSearch(String src, String dst) {
+    public Path GraphSearchDFS(String src, String dst) {
         if (!nodes.contains(src) || !nodes.contains(dst)) {
             return null;
         }
