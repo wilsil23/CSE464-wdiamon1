@@ -58,6 +58,62 @@ public class Graph {
         return addedCount;
     }
 
+    public void removeNode(String label) {
+        if (!nodes.contains(label)) {
+            throw new IllegalArgumentException("Node does not exist: " + label);
+        }
+        Iterator<String[]> it = edges.iterator();
+        while (it.hasNext()) {
+            String[] e = it.next();
+            if (e[0].equals(label) || e[1].equals(label)) {
+                it.remove();
+            }
+        }
+        nodes.remove(label);
+    }
+
+    public void removeNodes(String[] labels) {
+        for (String label : labels) {
+            if (!nodes.contains(label)) {
+                throw new IllegalArgumentException("Node does not exist: " + label);
+            }
+        }
+        for (String label : labels) {
+            removeNode(label);
+        }
+    }
+
+    public void removeEdge(String src, String dst) {
+        if (!nodes.contains(src) || !nodes.contains(dst)) {
+            throw new IllegalArgumentException("One or both nodes do not exist: " + src + ", " + dst);
+        }
+
+        boolean removed = false;
+        Iterator<String[]> it = edges.iterator();
+        while (it.hasNext()) {
+            String[] e = it.next();
+            if (e[0].equals(src) && e[1].equals(dst)) {
+                it.remove();
+                removed = true;
+                break;
+            }
+        }
+
+        if (!removed) {
+            throw new IllegalArgumentException("Edge does not exist: " + src + " -> " + dst);
+        }
+    }
+    public boolean hasNode(String label) {
+        return nodes.contains(label);
+    }
+
+    public boolean hasEdge(String src, String dst) {
+        for (String[] e : edges) {
+            if (e[0].equals(src) && e[1].equals(dst)) return true;
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -101,4 +157,3 @@ public class Graph {
         new File(tempDot).delete();
     }
 }
-
