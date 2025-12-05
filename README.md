@@ -2,6 +2,10 @@ Project Part 3 — Refactoring + Design Patterns
 Author: William Diamond
 Course: CSE 464
 
+Run commands:
+All tests cases should run and pass by simply opening and building the project and then doing:
+mvn package
+
 Overview
 
 This project refactors the original graph processing system to improve modularity, readability, testability, and maintainability.
