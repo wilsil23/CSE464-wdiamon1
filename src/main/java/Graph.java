@@ -11,6 +11,14 @@ public class Graph {
         DFS
     }
 
+    public Set<String> getNodes() {
+        return new HashSet<>(nodes); // defensive copy
+    }
+
+    public List<Edge> getEdges() {
+        return new ArrayList<>(edges);
+    }
+
     public void addNode(String label) {
         nodes.add(label);
     }
@@ -30,14 +38,6 @@ public class Graph {
             }
         }
         return added;
-    }
-
-    public Set<String> getNodes() {
-        return nodes;
-    }
-
-    public List<Edge> getEdges() {
-        return edges;
     }
 
     public boolean addEdgeUnique(String src, String dst) {
