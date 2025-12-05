@@ -12,12 +12,20 @@ public class DFSSearch extends GraphSearch {
         List<String> path = new ArrayList<>();
 
         boolean found = dfs(src, dst, visited, path);
-        return found ? new Path(path) : null;
+        if (found) {
+            System.out.println("Path{nodes=" + path + "}");
+            return new Path(path);
+        }
+        return null;
     }
 
-    private boolean dfs(String current, String dst, Set<String> visited, List<String> path) {
+    private boolean dfs(String current, String dst,
+                        Set<String> visited, List<String> path) {
+
         visited.add(current);
         path.add(current);
+
+        System.out.println("visiting Path{nodes=" + path + "}");
 
         if (current.equals(dst)) {
             return true;

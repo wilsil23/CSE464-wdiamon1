@@ -5,22 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60f313cb-fec5-4b19-bf4e-8e85259952df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/GraphSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/RandomWalkSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/GraphStrategyAPITest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/RandomWalkSearchTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BFSSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BFSSearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DFSSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DFSSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GraphRemoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphRemoveTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RandomWalkSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RandomWalkSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/input.dot" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/input.dot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/output.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/output.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/expected_feature1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/expected_feature1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/expected_feature3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/expected_feature3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test_output.dot" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_output.dot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/CSE464-wdiamon1-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/CSE464-wdiamon1-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BFSSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BFSSearch.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DFSSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DFSSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Graph$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Graph$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/GraphBFSTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/GraphBFSTest.txt" afterDir="false" />
@@ -30,10 +28,6 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphDFSTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphDFSTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphRemoveTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphRemoveTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphBFSTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GraphBFSTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphDFSTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GraphDFSTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphRemoveTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GraphRemoveTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GraphTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +54,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/William/Downloads/CSE464GraphProject",

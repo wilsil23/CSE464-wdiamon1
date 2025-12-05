@@ -1,5 +1,12 @@
-Nodes: 3
-Labels: [A, B, C]
-Edges: 2
-A -> B
-B -> C
+Nodes: 8
+Labels: [a, b, c, d, e, f, g, h]
+Edges: 9
+a -> b
+b -> c
+c -> d
+d -> a
+a -> e
+e -> f
+e -> g
+f -> h
+g -> h

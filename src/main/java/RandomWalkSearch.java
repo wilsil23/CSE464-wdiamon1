@@ -12,11 +12,12 @@ public class RandomWalkSearch extends GraphSearch {
         Random rand = new Random();
         List<String> path = new ArrayList<>();
         Set<String> visited = new HashSet<>();
-
         String current = src;
+
+        visited.add(current);
         path.add(current);
 
-        for (int steps = 0; steps < 1000; steps++) {
+        for (int i = 0; i < 1000; i++) {
 
             if (current.equals(dst)) {
                 return new Path(path);
@@ -38,7 +39,6 @@ public class RandomWalkSearch extends GraphSearch {
             visited.add(current);
             path.add(current);
         }
-
         return null;
     }
 }

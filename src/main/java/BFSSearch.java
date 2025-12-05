@@ -9,39 +9,40 @@ public class BFSSearch extends GraphSearch {
     @Override
     protected Path doSearch(String src, String dst) {
 
-        Queue<String> queue = new LinkedList<>();
-        Map<String, String> parent = new HashMap<>();
+        Queue<List<String>> queue = new LinkedList<>();
+        Set<String> visited = new HashSet<>();
 
-        queue.add(src);
-        parent.put(src, null);
-
-        for (Edge e : graph.getEdges()) {}
+        List<String> startPath = new ArrayList<>();
+        startPath.add(src);
+        queue.add(startPath);
+        visited.add(src);
 
         while (!queue.isEmpty()) {
-            String current = queue.poll();
+            List<String> currentPath = queue.poll();
+            String current = currentPath.get(currentPath.size() - 1);
+
+            System.out.println("visiting Path{nodes=" + currentPath + "}");
 
             if (current.equals(dst)) {
-                List<String> pathList = new ArrayList<>();
-                String node = dst;
-                while (node != null) {
-                    pathList.add(node);
-                    node = parent.get(node);
-                }
-                Collections.reverse(pathList);
-                return new Path(pathList);
+                System.out.println("Path{nodes=" + currentPath + "}");
+                return new Path(currentPath);
             }
 
             for (Edge e : graph.getEdges()) {
                 if (e.getSrc().equals(current)) {
                     String neighbor = e.getDst();
-                    if (!parent.containsKey(neighbor)) {
-                        parent.put(neighbor, current);
-                        queue.add(neighbor);
+
+                    if (!visited.contains(neighbor)) {
+                        visited.add(neighbor);
+                        List<String> newPath = new ArrayList<>(currentPath);
+                        newPath.add(neighbor);
+                        queue.add(newPath);
                     }
                 }
             }
         }
-
         return null;
     }
 }
+
+
