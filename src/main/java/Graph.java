@@ -12,11 +12,24 @@ public class Graph {
     }
 
     public Set<String> getNodes() {
-        return new HashSet<>(nodes); // defensive copy
+        return new HashSet<>(nodes);
     }
 
     public List<Edge> getEdges() {
         return new ArrayList<>(edges);
+    }
+
+    private Path buildPath(Map<String, String> parent, String dst) {
+        List<String> pathList = new ArrayList<>();
+        String node = dst;
+
+        while (node != null) {
+            pathList.add(node);
+            node = parent.get(node);
+        }
+
+        Collections.reverse(pathList);
+        return new Path(pathList);
     }
 
     public void addNode(String label) {
@@ -140,20 +153,16 @@ public class Graph {
 
         Queue<String> queue = new LinkedList<>();
         Map<String, String> parent = new HashMap<>();
+
         queue.add(src);
         parent.put(src, null);
 
         while (!queue.isEmpty()) {
             String current = queue.poll();
+
             if (current.equals(dst)) {
-                List<String> pathList = new ArrayList<>();
-                String node = dst;
-                while (node != null) {
-                    pathList.add(node);
-                    node = parent.get(node);
-                }
-                Collections.reverse(pathList);
-                return new Path(pathList);
+                // ---- Refactor #3: Use extracted method ----
+                return buildPath(parent, dst);
             }
 
             for (Edge e : edges) {
@@ -187,6 +196,7 @@ public class Graph {
     private boolean dfsHelper(String current, String dst,
                               Set<String> visited,
                               List<String> path) {
+
         visited.add(current);
         path.add(current);
 
@@ -197,6 +207,7 @@ public class Graph {
         for (Edge e : edges) {
             if (e.getSrc().equals(current)) {
                 String neighbor = e.getDst();
+
                 if (!visited.contains(neighbor)) {
                     if (dfsHelper(neighbor, dst, visited, path)) {
                         return true;
