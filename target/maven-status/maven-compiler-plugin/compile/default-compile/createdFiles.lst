@@ -1,6 +1,9 @@
 GraphParser.class
 Main.class
+BFSSearch.class
 Graph.class
 Path.class
+DFSSearch.class
 Graph$Algorithm.class
+Graph$1.class
 Edge.class

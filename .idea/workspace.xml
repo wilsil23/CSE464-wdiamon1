@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60f313cb-fec5-4b19-bf4e-8e85259952df" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/BFSSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DFSSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GraphBFSTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphBFSTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GraphDFSTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphDFSTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/GraphBFSTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/GraphBFSTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/GraphDFSTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/GraphDFSTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphBFSTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphBFSTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphDFSTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphDFSTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphRemoveTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphRemoveTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphTest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +75,7 @@
       <updated>1763178583446</updated>
       <workItem from="1763178584243" duration="28000" />
       <workItem from="1764894828251" duration="17000" />
-      <workItem from="1764966066053" duration="1404000" />
+      <workItem from="1764966066053" duration="1890000" />
     </task>
     <servers />
   </component>

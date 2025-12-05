@@ -19,19 +19,6 @@ public class Graph {
         return new ArrayList<>(edges);
     }
 
-    private Path buildPath(Map<String, String> parent, String dst) {
-        List<String> pathList = new ArrayList<>();
-        String node = dst;
-
-        while (node != null) {
-            pathList.add(node);
-            node = parent.get(node);
-        }
-
-        Collections.reverse(pathList);
-        return new Path(pathList);
-    }
-
     public void addNode(String label) {
         nodes.add(label);
     }
@@ -138,86 +125,15 @@ public class Graph {
         return false;
     }
 
-    public Path GraphSearch(String src, String dst, Algorithm initAlgorithm) {
-        if (initAlgorithm == Algorithm.BFS) {
-            return bfsSearch(src, dst);
-        } else {
-            return dfsSearch(src, dst);
+    public Path GraphSearch(String src, String dst, Algorithm algo) {
+        switch (algo) {
+            case BFS:
+                return new BFSSearch(this).search(src, dst);
+            case DFS:
+                return new DFSSearch(this).search(src, dst);
+            default:
+                throw new IllegalArgumentException("Unknown algorithm: " + algo);
         }
-    }
-
-    public Path bfsSearch(String src, String dst) {
-        if (!nodes.contains(src) || !nodes.contains(dst)) {
-            return null;
-        }
-
-        Queue<String> queue = new LinkedList<>();
-        Map<String, String> parent = new HashMap<>();
-
-        queue.add(src);
-        parent.put(src, null);
-
-        while (!queue.isEmpty()) {
-            String current = queue.poll();
-
-            if (current.equals(dst)) {
-                // ---- Refactor #3: Use extracted method ----
-                return buildPath(parent, dst);
-            }
-
-            for (Edge e : edges) {
-                if (e.getSrc().equals(current)) {
-                    String neighbor = e.getDst();
-                    if (!parent.containsKey(neighbor)) {
-                        parent.put(neighbor, current);
-                        queue.add(neighbor);
-                    }
-                }
-            }
-        }
-        return null;
-    }
-
-    public Path dfsSearch(String src, String dst) {
-        if (!nodes.contains(src) || !nodes.contains(dst)) {
-            return null;
-        }
-
-        Set<String> visited = new HashSet<>();
-        List<String> path = new ArrayList<>();
-
-        boolean found = dfsHelper(src, dst, visited, path);
-        if (found) {
-            return new Path(path);
-        }
-        return null;
-    }
-
-    private boolean dfsHelper(String current, String dst,
-                              Set<String> visited,
-                              List<String> path) {
-
-        visited.add(current);
-        path.add(current);
-
-        if (current.equals(dst)) {
-            return true;
-        }
-
-        for (Edge e : edges) {
-            if (e.getSrc().equals(current)) {
-                String neighbor = e.getDst();
-
-                if (!visited.contains(neighbor)) {
-                    if (dfsHelper(neighbor, dst, visited, path)) {
-                        return true;
-                    }
-                }
-            }
-        }
-
-        path.remove(path.size() - 1);
-        return false;
     }
 
     @Override
