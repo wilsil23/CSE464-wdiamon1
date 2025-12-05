@@ -2,8 +2,9 @@ import java.util.*;
 import java.io.*;
 
 public class Graph {
+
     private Set<String> nodes = new HashSet<>();
-    private List<String[]> edges = new ArrayList<>();
+    private List<Edge> edges = new ArrayList<>();
 
     public enum Algorithm {
         BFS,
@@ -35,20 +36,21 @@ public class Graph {
         return nodes;
     }
 
-    public List<String[]> getEdges() {
+    public List<Edge> getEdges() {
         return edges;
     }
 
     public boolean addEdgeUnique(String src, String dst) {
-        for (String[] edge : edges) {
-            if (edge[0].equals(src) && edge[1].equals(dst)) {
+        for (Edge edge : edges) {
+            if (edge.getSrc().equals(src) && edge.getDst().equals(dst)) {
                 return false;
             }
         }
+
         nodes.add(src);
         nodes.add(dst);
 
-        edges.add(new String[]{src, dst});
+        edges.add(new Edge(src, dst));
         return true;
     }
 
@@ -67,13 +69,15 @@ public class Graph {
         if (!nodes.contains(label)) {
             throw new IllegalArgumentException("Node does not exist: " + label);
         }
-        Iterator<String[]> it = edges.iterator();
+
+        Iterator<Edge> it = edges.iterator();
         while (it.hasNext()) {
-            String[] e = it.next();
-            if (e[0].equals(label) || e[1].equals(label)) {
+            Edge e = it.next();
+            if (e.getSrc().equals(label) || e.getDst().equals(label)) {
                 it.remove();
             }
         }
+
         nodes.remove(label);
     }
 
@@ -93,29 +97,34 @@ public class Graph {
             throw new IllegalArgumentException("One or both nodes do not exist: " + src + ", " + dst);
         }
         boolean removed = false;
-        Iterator<String[]> it = edges.iterator();
+
+        Iterator<Edge> it = edges.iterator();
         while (it.hasNext()) {
-            String[] e = it.next();
-            if (e[0].equals(src) && e[1].equals(dst)) {
+            Edge e = it.next();
+            if (e.getSrc().equals(src) && e.getDst().equals(dst)) {
                 it.remove();
                 removed = true;
                 break;
             }
         }
+
         if (!removed) {
             throw new IllegalArgumentException("Edge does not exist: " + src + " -> " + dst);
         }
     }
+
     public boolean hasNode(String label) {
         return nodes.contains(label);
     }
 
     public boolean hasEdge(String src, String dst) {
-        for (String[] e : edges) {
-            if (e[0].equals(src) && e[1].equals(dst)) return true;
+        for (Edge e : edges) {
+            if (e.getSrc().equals(src) && e.getDst().equals(dst))
+                return true;
         }
         return false;
     }
+
     public Path GraphSearch(String src, String dst, Algorithm initAlgorithm) {
         if (initAlgorithm == Algorithm.BFS) {
             return bfsSearch(src, dst);
@@ -128,6 +137,7 @@ public class Graph {
         if (!nodes.contains(src) || !nodes.contains(dst)) {
             return null;
         }
+
         Queue<String> queue = new LinkedList<>();
         Map<String, String> parent = new HashMap<>();
         queue.add(src);
@@ -145,9 +155,10 @@ public class Graph {
                 Collections.reverse(pathList);
                 return new Path(pathList);
             }
-            for (String[] e : edges) {
-                if (e[0].equals(current)) {
-                    String neighbor = e[1];
+
+            for (Edge e : edges) {
+                if (e.getSrc().equals(current)) {
+                    String neighbor = e.getDst();
                     if (!parent.containsKey(neighbor)) {
                         parent.put(neighbor, current);
                         queue.add(neighbor);
@@ -162,8 +173,10 @@ public class Graph {
         if (!nodes.contains(src) || !nodes.contains(dst)) {
             return null;
         }
+
         Set<String> visited = new HashSet<>();
         List<String> path = new ArrayList<>();
+
         boolean found = dfsHelper(src, dst, visited, path);
         if (found) {
             return new Path(path);
@@ -176,12 +189,14 @@ public class Graph {
                               List<String> path) {
         visited.add(current);
         path.add(current);
+
         if (current.equals(dst)) {
             return true;
         }
-        for (String[] e : edges) {
-            if (e[0].equals(current)) {
-                String neighbor = e[1];
+
+        for (Edge e : edges) {
+            if (e.getSrc().equals(current)) {
+                String neighbor = e.getDst();
                 if (!visited.contains(neighbor)) {
                     if (dfsHelper(neighbor, dst, visited, path)) {
                         return true;
@@ -189,6 +204,7 @@ public class Graph {
                 }
             }
         }
+
         path.remove(path.size() - 1);
         return false;
     }
@@ -199,9 +215,11 @@ public class Graph {
         sb.append("Nodes: ").append(nodes.size()).append("\n");
         sb.append("Labels: ").append(nodes).append("\n");
         sb.append("Edges: ").append(edges.size()).append("\n");
-        for (String[] e : edges) {
-            sb.append(e[0]).append(" -> ").append(e[1]).append("\n");
+
+        for (Edge e : edges) {
+            sb.append(e.getSrc()).append(" -> ").append(e.getDst()).append("\n");
         }
+
         return sb.toString();
     }
 
@@ -211,8 +229,8 @@ public class Graph {
             for (String node : nodes) {
                 writer.write("  " + node + ";\n");
             }
-            for (String[] edge : edges) {
-                writer.write("  " + edge[0] + " -> " + edge[1] + ";\n");
+            for (Edge edge : edges) {
+                writer.write("  " + edge.getSrc() + " -> " + edge.getDst() + ";\n");
             }
             writer.write("}\n");
         }
@@ -222,10 +240,13 @@ public class Graph {
         String tempDot = "src/main/resources/tempGraph.dot";
         outputDOTGraph(tempDot);
         String cmd = String.format("dot -T%s %s -o %s", format, tempDot, path);
+
         Process process = Runtime.getRuntime().exec(cmd);
         int exitCode = process.waitFor();
+
         if (exitCode != 0) {
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getErrorStream()))) {
+            try (BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(process.getErrorStream()))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     System.err.println(line);
@@ -233,6 +254,7 @@ public class Graph {
             }
             throw new IOException("Graphviz command failed. Make sure Graphviz is installed and 'dot' is in your PATH.");
         }
+
         new File(tempDot).delete();
     }
 }

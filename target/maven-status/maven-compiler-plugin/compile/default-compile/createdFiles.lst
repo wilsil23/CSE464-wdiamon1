@@ -3,3 +3,4 @@ Main.class
 Graph.class
 Path.class
 Graph$Algorithm.class
+Edge.class
