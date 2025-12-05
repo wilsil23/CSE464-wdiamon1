@@ -1,21 +1,27 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+
 public class GraphRemoveTest {
+
     @Test
     public void testRemoveNodesAndEdges_Successful() {
         Graph g = new Graph();
         g.addNodes(new String[]{"A", "B", "C", "D"});
-        g.addEdges(new String[][] {{"A","B"}, {"B","C"}, {"A","C"}, {"C","D"}});
+        g.addEdges(new String[][]{{"A","B"}, {"B","C"}, {"A","C"}, {"C","D"}});
+
         assertTrue(g.hasNode("A"));
         assertTrue(g.hasNode("D"));
         assertTrue(g.hasEdge("A", "B"));
         assertTrue(g.hasEdge("C", "D"));
+
         g.removeEdge("A", "B");
         g.removeNode("D");
-        assertFalse(g.hasEdge("A", "B"), "A->B should be removed");
-        assertFalse(g.hasNode("D"), "D should be removed");
-        assertTrue(g.hasEdge("B", "C"), "B->C should still exist");
+
+        assertFalse(g.hasEdge("A", "B"));
+        assertFalse(g.hasNode("D"));
+        assertTrue(g.hasEdge("B", "C"));
     }
+
     @Test
     public void testRemoveNode_NotExist_Throws() {
         Graph g = new Graph();

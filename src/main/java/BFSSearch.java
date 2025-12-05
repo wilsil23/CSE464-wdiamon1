@@ -1,17 +1,13 @@
 import java.util.*;
 
-public class BFSSearch {
-
-    private final Graph graph;
+public class BFSSearch extends GraphSearch {
 
     public BFSSearch(Graph graph) {
-        this.graph = graph;
+        super(graph);
     }
 
-    public Path search(String src, String dst) {
-        if (!graph.hasNode(src) || !graph.hasNode(dst)) {
-            return null;
-        }
+    @Override
+    protected Path doSearch(String src, String dst) {
 
         Queue<String> queue = new LinkedList<>();
         Map<String, String> parent = new HashMap<>();
@@ -25,7 +21,14 @@ public class BFSSearch {
             String current = queue.poll();
 
             if (current.equals(dst)) {
-                return buildPath(parent, dst);
+                List<String> pathList = new ArrayList<>();
+                String node = dst;
+                while (node != null) {
+                    pathList.add(node);
+                    node = parent.get(node);
+                }
+                Collections.reverse(pathList);
+                return new Path(pathList);
             }
 
             for (Edge e : graph.getEdges()) {
@@ -38,17 +41,7 @@ public class BFSSearch {
                 }
             }
         }
-        return null;
-    }
 
-    private Path buildPath(Map<String, String> parent, String dst) {
-        List<String> path = new ArrayList<>();
-        String cur = dst;
-        while (cur != null) {
-            path.add(cur);
-            cur = parent.get(cur);
-        }
-        Collections.reverse(path);
-        return new Path(path);
+        return null;
     }
 }

@@ -40,6 +40,32 @@ public class Graph {
         return added;
     }
 
+    public void removeNode(String label) {
+        if (!nodes.contains(label)) {
+            throw new IllegalArgumentException("Node does not exist: " + label);
+        }
+
+        Iterator<Edge> it = edges.iterator();
+        while (it.hasNext()) {
+            Edge e = it.next();
+            if (e.getSrc().equals(label) || e.getDst().equals(label)) {
+                it.remove();
+            }
+        }
+        nodes.remove(label);
+    }
+
+    public void removeNodes(String[] labels) {
+        for (String label : labels) {
+            if (!nodes.contains(label)) {
+                throw new IllegalArgumentException("Node does not exist: " + label);
+            }
+        }
+        for (String label : labels) {
+            removeNode(label);
+        }
+    }
+
     public boolean addEdgeUnique(String src, String dst) {
         for (Edge edge : edges) {
             if (edge.getSrc().equals(src) && edge.getDst().equals(dst)) {
@@ -65,37 +91,11 @@ public class Graph {
         return addedCount;
     }
 
-    public void removeNode(String label) {
-        if (!nodes.contains(label)) {
-            throw new IllegalArgumentException("Node does not exist: " + label);
-        }
-
-        Iterator<Edge> it = edges.iterator();
-        while (it.hasNext()) {
-            Edge e = it.next();
-            if (e.getSrc().equals(label) || e.getDst().equals(label)) {
-                it.remove();
-            }
-        }
-
-        nodes.remove(label);
-    }
-
-    public void removeNodes(String[] labels) {
-        for (String label : labels) {
-            if (!nodes.contains(label)) {
-                throw new IllegalArgumentException("Node does not exist: " + label);
-            }
-        }
-        for (String label : labels) {
-            removeNode(label);
-        }
-    }
-
     public void removeEdge(String src, String dst) {
         if (!nodes.contains(src) || !nodes.contains(dst)) {
             throw new IllegalArgumentException("One or both nodes do not exist: " + src + ", " + dst);
         }
+
         boolean removed = false;
 
         Iterator<Edge> it = edges.iterator();
@@ -119,21 +119,28 @@ public class Graph {
 
     public boolean hasEdge(String src, String dst) {
         for (Edge e : edges) {
-            if (e.getSrc().equals(src) && e.getDst().equals(dst))
+            if (e.getSrc().equals(src) && e.getDst().equals(dst)) {
                 return true;
+            }
         }
         return false;
     }
 
     public Path GraphSearch(String src, String dst, Algorithm algo) {
+        GraphSearch strategy;
+
         switch (algo) {
             case BFS:
-                return new BFSSearch(this).search(src, dst);
+                strategy = new BFSSearch(this);
+                break;
             case DFS:
-                return new DFSSearch(this).search(src, dst);
+                strategy = new DFSSearch(this);
+                break;
             default:
                 throw new IllegalArgumentException("Unknown algorithm: " + algo);
         }
+
+        return strategy.search(src, dst);   // calls template method
     }
 
     @Override
@@ -146,7 +153,6 @@ public class Graph {
         for (Edge e : edges) {
             sb.append(e.getSrc()).append(" -> ").append(e.getDst()).append("\n");
         }
-
         return sb.toString();
     }
 
@@ -166,14 +172,14 @@ public class Graph {
     public void outputGraphics(String path, String format) throws IOException, InterruptedException {
         String tempDot = "src/main/resources/tempGraph.dot";
         outputDOTGraph(tempDot);
-        String cmd = String.format("dot -T%s %s -o %s", format, tempDot, path);
 
+        String cmd = String.format("dot -T%s %s -o %s", format, tempDot, path);
         Process process = Runtime.getRuntime().exec(cmd);
         int exitCode = process.waitFor();
 
         if (exitCode != 0) {
-            try (BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(process.getErrorStream()))) {
+            try (BufferedReader reader =
+                         new BufferedReader(new InputStreamReader(process.getErrorStream()))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     System.err.println(line);

@@ -5,21 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60f313cb-fec5-4b19-bf4e-8e85259952df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/BFSSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DFSSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GraphSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/RandomWalkSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/GraphStrategyAPITest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/RandomWalkSearchTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BFSSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BFSSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DFSSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DFSSearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GraphBFSTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphBFSTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GraphDFSTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphDFSTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GraphRemoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphRemoveTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CSE464-wdiamon1-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/CSE464-wdiamon1-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BFSSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BFSSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DFSSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DFSSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Graph$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Graph$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Graph.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/GraphBFSTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/GraphBFSTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/GraphDFSTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/GraphDFSTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/GraphTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/GraphTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphBFSTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphBFSTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphDFSTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphDFSTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphRemoveTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphRemoveTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphBFSTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GraphBFSTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphDFSTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GraphDFSTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphRemoveTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GraphRemoveTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GraphTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +89,7 @@
       <updated>1763178583446</updated>
       <workItem from="1763178584243" duration="28000" />
       <workItem from="1764894828251" duration="17000" />
-      <workItem from="1764966066053" duration="1890000" />
+      <workItem from="1764966066053" duration="2906000" />
     </task>
     <servers />
   </component>
