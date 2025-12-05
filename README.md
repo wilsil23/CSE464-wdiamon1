@@ -6,7 +6,7 @@ Run commands:
 All tests cases should run and pass by simply opening and building the project and then doing:
 mvn package
 
-Project uses custom JUNIT tests I wrote so you can see when running the outputs match their expected output files (should be included in zip).
+Project uses custom JUNIT tests, zip file will contain expected output files that are tested against in order to show correctness.
 
 Overview
 
