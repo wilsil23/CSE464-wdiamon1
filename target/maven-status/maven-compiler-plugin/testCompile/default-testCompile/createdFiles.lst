@@ -1,4 +1,6 @@
 GraphRemoveTest.class
+GraphStrategyAPITest.class
 GraphTest.class
 GraphDFSTest.class
+RandomWalkSearchTest.class
 GraphBFSTest.class

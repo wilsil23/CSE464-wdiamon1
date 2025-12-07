@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="60f313cb-fec5-4b19-bf4e-8e85259952df" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BFSSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BFSSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DFSSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DFSSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RandomWalkSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RandomWalkSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/input.dot" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/input.dot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/output.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/output.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/expected_feature1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/expected_feature1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/expected_feature3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/expected_feature3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test_output.dot" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_output.dot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CSE464-wdiamon1-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/CSE464-wdiamon1-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BFSSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BFSSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DFSSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DFSSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/GraphBFSTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/GraphBFSTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/GraphDFSTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/GraphDFSTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/GraphTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/GraphTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphBFSTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphBFSTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphDFSTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphDFSTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphRemoveTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphRemoveTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GraphTest.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="35UxixiGtu3YqST9EFQio1e7WXy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/William/Downloads/CSE464GraphProject",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="60f313cb-fec5-4b19-bf4e-8e85259952df" name="Changes" comment="" />
+      <created>1763178583446</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1763178583446</updated>
+      <workItem from="1763178584243" duration="28000" />
+      <workItem from="1764894828251" duration="17000" />
+      <workItem from="1764966066053" duration="2906000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

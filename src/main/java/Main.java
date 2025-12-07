@@ -6,22 +6,57 @@ public class Main {
             InputStream is = Main.class.getResourceAsStream("/input.dot");
             Graph g = GraphParser.parseGraph(is);
 
-            System.out.println("Original graph:");
-            System.out.println(g.toString());
-            g.addNodeUnique("D");
-            g.addNodes(new String[]{"E", "F"});
-            g.addEdgeUnique("C", "D");
-            g.addEdgeUnique("D", "E");
-            g.addEdges(new String[][] {{"A", "C"}, {"E", "F"}, {"B", "C"}});
+            System.out.println("====================================");
+            System.out.println("Loaded Graph:");
+            System.out.println(g);
+            System.out.println("====================================\n");
 
-            System.out.println("After adding nodes and edges:");
-            System.out.println(g.toString());
+            String start = "a";
+            String target = "h";
 
-            g.outputDOTGraph("src/main/resources/output.dot");
-            g.outputGraphics("src/main/resources/output.png", "png");
+            System.out.println("===== BFS Search (Scheme A) =====");
+            BFSSearch bfs = new BFSSearch(g);
+            Path bfsPath = bfs.search(start, target);
+            if (bfsPath != null) {
+                System.out.println("BFS Final Path: " + bfsPath + "\n");
+            } else {
+                System.out.println("BFS could not find a path.\n");
+            }
+
+            System.out.println("===== DFS Search (Scheme A) =====");
+            DFSSearch dfs = new DFSSearch(g);
+            Path dfsPath = dfs.search(start, target);
+            if (dfsPath != null) {
+                System.out.println("DFS Final Path: " + dfsPath + "\n");
+            } else {
+                System.out.println("DFS could not find a path.\n");
+            }
+
+            System.out.println("===== Random Walk Search (5 Attempts) =====");
+
+            RandomWalkSearch rws = new RandomWalkSearch(g);
+
+            for (int attempt = 1; attempt <= 5; attempt++) {
+                Path p = rws.search(start, target);
+
+                if (p == null) {
+                    System.out.println("Attempt " + attempt + ": dead end");
+                } else {
+                    boolean success =
+                            p.getNodes().get(p.getNodes().size() - 1).equals(target);
+
+                    if (success) {
+                        System.out.println("Attempt " + attempt + ": " + p + " (target!)");
+                    } else {
+                        System.out.println("Attempt " + attempt + ": " + p + " (dead end)");
+                    }
+                }
+            }
+
+            System.out.println("\n===== Random Walk Demo Complete =====");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
-
